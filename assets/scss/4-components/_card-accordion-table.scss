@@ -98,4 +98,7 @@
     overflow-x: hidden;
     height: calc(100vh - 145px);
     padding-right: 5px;
+    @include media-down("sm") {
+        padding-bottom: 120px;
+    }
 }

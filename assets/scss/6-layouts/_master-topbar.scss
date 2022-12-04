@@ -310,6 +310,10 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         z-index: 999;
         display: none;
+        @include media-down("sm") {
+            transform: translateX(50%);
+            right: 50%;
+        }
     }
 }
 

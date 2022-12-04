@@ -13,6 +13,11 @@
         padding: 5px 10px;
         font-size: 15px;
     }
+    @include media-down("sm") {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 18px;
+    }
     &.#{$prefix}btn-responsive {
         @include media-down("xl") {
             span {
@@ -38,6 +43,9 @@
 
     i {
         font-size: 28px;
+        @include media-down("sm") {
+            font-size: 18px;
+        }
     }
 
     &:hover {

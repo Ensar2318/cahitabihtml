@@ -4732,6 +4732,13 @@ body ::-webkit-scrollbar-thumb {
   padding: 5px 10px;
   font-size: 15px;
 }
+@media (max-width: 575px) {
+  .ui-btn {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 18px;
+  }
+}
 @media (max-width: 1199px) {
   .ui-btn.ui-btn-responsive span {
     display: none;
@@ -4748,6 +4755,11 @@ body ::-webkit-scrollbar-thumb {
 }
 .ui-btn i {
   font-size: 28px;
+}
+@media (max-width: 575px) {
+  .ui-btn i {
+    font-size: 18px;
+  }
 }
 .ui-btn:hover {
   opacity: 0.7;
@@ -5710,7 +5722,7 @@ body ::-webkit-scrollbar-thumb {
 }
 @media (max-width: 575px) {
   .ui-card .ui-card-header {
-    margin: 0;
+    margin: 0 10px;
   }
 }
 .ui-card .ui-card-header .ui-card-title {
@@ -5883,6 +5895,11 @@ body ::-webkit-scrollbar-thumb {
   overflow-x: hidden;
   height: calc(100vh - 145px);
   padding-right: 5px;
+}
+@media (max-width: 575px) {
+  .ui-fullscreen-scroll {
+    padding-bottom: 120px;
+  }
 }
 
 .ui-card-file-manager .ui-file-list .ui-file-list-item {
@@ -6305,6 +6322,12 @@ body ::-webkit-scrollbar-thumb {
   margin-right: 20px;
   border-bottom: solid 1px #bec6ff;
 }
+@media (max-width: 575px) {
+  .ui-quest-sidebar .ui-quest-body .ui-quest-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
 .ui-quest-sidebar .ui-quest-body .ui-quest-item .ui-quest-notify {
   width: 20px;
   height: 20px;
@@ -6321,9 +6344,19 @@ body ::-webkit-scrollbar-thumb {
   font-size: 600;
   font-size: 20px;
 }
+@media (max-width: 575px) {
+  .ui-quest-sidebar .ui-quest-body .ui-quest-item .ui-quest-title span {
+    font-size: 16px;
+  }
+}
 .ui-quest-sidebar .ui-quest-body .ui-quest-item .ui-quest-desc {
   font-size: 20px;
   font-weight: 400;
+}
+@media (max-width: 575px) {
+  .ui-quest-sidebar .ui-quest-body .ui-quest-item .ui-quest-desc {
+    font-size: 16px;
+  }
 }
 
 .ui-quest-sidebar-calender {
@@ -6370,12 +6403,13 @@ body ::-webkit-scrollbar-thumb {
   top: 25px;
   right: 25px;
   font-size: 32px;
+  z-index: 99;
 }
 @media (max-width: 1199px) {
   .ui-calender-side-responsive {
     padding: 20px;
     max-width: 100%;
-    overflow: hidden;
+    overflow: auto;
     position: fixed;
     left: 0;
     right: 0;
@@ -6391,7 +6425,16 @@ body ::-webkit-scrollbar-thumb {
     justify-content: center;
     max-width: 600px;
     margin: auto;
+    padding: 0 40px;
   }
+}
+@media (max-width: 1199px) and (max-width: 400px) {
+  .ui-calender-side-responsive .calender {
+    scale: 0.8;
+    padding: 0;
+  }
+}
+@media (max-width: 1199px) {
   .ui-calender-side-responsive.active {
     transform: translate3d(0, 0, 0px);
   }
@@ -6696,6 +6739,12 @@ body ::-webkit-scrollbar-thumb {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   z-index: 999;
   display: none;
+}
+@media (max-width: 575px) {
+  .ui-dropdown-container .ui-dropdown-content {
+    transform: translateX(50%);
+    right: 50%;
+  }
 }
 
 .ui-shopping-dropdown-container {
