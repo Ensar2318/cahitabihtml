@@ -59,7 +59,11 @@
         width: 100%;
         max-width: 480px;
         &.small-v {
-            max-width: 280px;
+            max-width: 600px;
+            padding-right: 30px;
+            @include media-down("xxl") {
+                padding-right: 0px;
+            }
             .#{$prefix}search-input {
                 i {
                     font-size: 16px;

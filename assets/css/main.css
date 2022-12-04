@@ -6518,7 +6518,13 @@ body ::-webkit-scrollbar-thumb {
   max-width: 480px;
 }
 .ui-master-topbar .ui-topbar-search.small-v {
-  max-width: 280px;
+  max-width: 600px;
+  padding-right: 30px;
+}
+@media (max-width: 1399px) {
+  .ui-master-topbar .ui-topbar-search.small-v {
+    padding-right: 0px;
+  }
 }
 .ui-master-topbar .ui-topbar-search.small-v .ui-search-input i {
   font-size: 16px;
