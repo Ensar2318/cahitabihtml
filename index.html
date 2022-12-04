@@ -634,12 +634,14 @@
                                 <div class="me-auto">
                                     <span>14.10.2022</span>
                                 </div>
-                                <button class="ui-btn ui-btn-sm theme-orange">
-                                    Atanan
-                                </button>
-                                <button class="ui-btn ui-btn-sm theme-orange-reverse">
-                                    Bekleyen
-                                </button>
+                                <div class="calender-quest-buttons">
+                                    <button class="ui-btn ui-btn-sm theme-orange" data-ajax-filter="atanan">
+                                        Atanan
+                                    </button>
+                                    <button data-ajax-filter="Bekleyen" class="ui-btn ui-btn-sm theme-orange-reverse">
+                                        Bekleyen
+                                    </button>
+                                </div>
                             </div>
                             <div class="ui-divider ui-border-light mt-3"></div>
                             <div class="ui-quest-sidebar-calender  ui-bg-white">
@@ -832,7 +834,36 @@
                     });
                 }
             });
+        });
 
+        $(document).on("click", ".calender-quest-buttons", function () {
+            let filterKey = $(this).attr("data-ajax-filter");
+            $(".ui-quest-sidebar-calender .ui-quest-body").html("");
+            $.ajax({
+                type: "get",
+                url: "../data/quest.json",
+                data: {
+                    query: filterKey
+                },
+                dataType: "json",
+                success: function (response) {
+                    response.forEach(quest => {
+                        let htmlItem = `
+                        <div class="ui-quest-item">
+                            <div class="ui-quest-title">
+                                <span>${quest.title}</span>
+                                <div class="ui-quest-notify"></div>
+                            </div>
+                            <div class="ui-quest-desc">
+                               ${quest.desc}
+                            </div>
+                        </div>
+                        `;
+                        $(".ui-quest-sidebar-calender .ui-quest-body").append(htmlItem);
+
+                    });
+                }
+            });
         });
     </script>
     <!-- :: END THIS PAGE SCRIPTS :: -->

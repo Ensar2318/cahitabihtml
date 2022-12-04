@@ -39,7 +39,7 @@
 
     .#{$prefix}sidebar-body {
         @include display.flex;
-
+        height: calc(160px - 100vh);
         flex: 1;
         overflow-y: auto;
         //padding: spacing.get(30) 0;
