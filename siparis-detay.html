@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.css">
+    <link rel="stylesheet" href="assets/vendors/apex-charts/apexcharts.css">
+    <link rel="stylesheet" href="assets/vendors/air-datepicker-3/air-datepicker.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- :: PHOSPOR ICONS :: -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+
+<body>
+
+    <!-- :: BEGIN MASTER CONTAINER :: -->
+    <div class="ui-master-container">
+        <!-- :: BEGIN MASTER SIDEBAR :: -->
+        <div class="ui-sidebar-overlay"></div>
+        <div class="ui-master-sidebar">
+            <!-- :: BEGIN MASTER SIDEBAR HEADER :: -->
+            <div class="ui-sidebar-header">
+                <a href="#" class="ui-brand">
+                    <a class="ui-mobile-sidebar-toggle" href=""> <i class="ph-x"></i></a>
+                    <img src="assets/img/logo/logo.png" alt="">
+                </a>
+            </div>
+            <!-- :: END MASTER SIDEBAR HEADER :: -->
+
+            <!-- :: BEGIN MASTER SIDEBAR BODY :: -->
+            <div class="ui-sidebar-body">
+
+                <nav class="ui-sidebar-nav">
+                    <div class="ui-sidebar-nav-top">
+                        <div class="ui-sidebar-nav-item active">
+                            <a href="index.html">
+                                <i class="ph-house"></i>
+                                <span> Anasayfa</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="musteri-detay.html">
+                                <i class="ph-users"></i>
+                                <span> Müşteriler</span>
+                            </a>
+                            <span class="ui-sidebar-submenu-toggle">
+                                <i class="ph-caret-down"></i>
+                            </span>
+                            <div class="ui-sidebar-submenu">
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-tag"></i>
+                                <span> Fırsatlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-chart-line-up"></i>
+                                <span>Aktiviteler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-clipboard-text"></i>
+                                <span> Görevler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="siparis-olustur.html">
+                                <i class="ph-shopping-cart"></i>
+                                <span>Siparişler</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ui-sidebar-nav-bottom">
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-gear"></i>
+                                <span>Ayarlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-sign-out"></i>
+                                <span> Çıkış Yap</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <!-- :: END MASTER SIDEBAR BODY :: -->
+
+        </div>
+        <!-- :: END MASTER SIDEBAR :: -->
+        <div class="ui-master-main-wrapper">
+            <!-- :: BEGIN MASTER TOPBAR :: -->
+            <div class="ui-master-topbar">
+
+                <div class="ui-topbar-content">
+                    <!-- :: BEGIN TOPBAR MAIN :: -->
+
+                    <div class="ui-topbar-main">
+                        <div class="ui-mobile-toggle-side">
+                            <a href="" class="ui-mobile-sidebar-toggle">
+                                <i class="ph-list"></i>
+                            </a>
+                            <a href="#" class="ui-mobile-brand d-sm-block d-none">
+                                <img src="assets/img/logo/logo.png" alt="">
+                            </a>
+                        </div>
+                        <h1 class="ui-topbar-title">Sipariş Oluştur</h1>
+
+                        <div class="ui-topbar-search" ui-data-search-selected="searchbar">
+                            <div class="ui-search-input">
+                                <i class="ph-magnifying-glass"></i>
+                                <input type="text" name="query" id="ui-main-search-input"
+                                    placeholder="Aramak için bir şeyler yaz" autocomplete="off">
+                            </div>
+
+                            <div class="ui-search-results"></div>
+                        </div>
+
+                        <div class="ui-setting-toolbar">
+                            <div class="ui-toolbar-buttons">
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn"><i
+                                            class="ph-shopping-cart"></i></button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-shopping-button-in-shopping-result-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-pb-5 ui-fs-16">Sipariş
+                                                Özeti</span>
+                                            <div class="d-flex justify-content-between ui-pb-10 ui-pe-10">
+                                                <span class="ui-fs-16">Ürün</span>
+                                                <span class="ui-fs-16">Toplam</span>
+                                            </div>
+
+                                            <div class="ui-shopping-dropdown-container ui-pe-10">
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="ui-mt-10 ui-mb-10">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <span class="d-block ui-fs-14">İndirim Tutarı</span>
+                                                    <span class="d-block ui-fs-14">KDV</span>
+                                                    <span class="d-block ui-fs-14">Toplam</span>
+                                                </div>
+                                                <div>
+                                                    <span class="d-block  ui-fs-14">-112,35₺</span>
+                                                    <span class="d-block  ui-fs-14">+100₺</span>
+                                                    <span class="d-block  ui-fs-14">303,35₺</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn">
+                                        <span class="ui-notify"></span>
+                                        <i class="ph-bell"></i>
+                                    </button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-notification-dropdown-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-fs-16">Bildirimler</span>
+                                            <div class="ui-notification-body">
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button ui-data-search-target="searchbar" class="ui-icon-btn d-sm-none d-block"><i
+                                        class="ph-magnifying-glass"></i></button>
+                                <button class="openQuest ui-icon-btn d-xxl-none d-flex"><i
+                                        class="ph-newspaper"></i></button>
+
+                            </div>
+                            <div class="ui-toolbar-user">
+                                <img class="ui-user-profile" src="https://via.placeholder.com/60">
+                                <div class="ui-user-detail">
+                                    <div class="ui-user-name">Billur B.</div>
+                                    <div class="ui-user-title">BBTech Company</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- :: END TOPBAR MAIN :: -->
+
+                    <!-- :: BEGIN TOPBAR ACTIONS :: -->
+                    <div class="ui-topbar-actions">
+
+                    </div>
+                    <!-- :: END TOPBAR ACTIONS :: -->
+                </div>
+            </div>
+
+            <!-- :: END MASTER TOPBAR :: -->
+
+            <!-- :: BEGIN MASTER CONTENT :: -->
+            <div class="ui-master-content scrollable">
+                <div class="ui-bg-light ui-p-10">
+                    <div class="row gy-4 gx-3">
+                        <div class="col-xl-3">
+                            <div class="ui-order-detail-status">
+                                <div class="row">
+                                    <div class="col-md-6 col-xl-12">
+                                        <span class="ui-fs-20 d-block ui-pb-5">Sipariş NO <span
+                                                class="ui-fw-b">#ABC123BB5</span></span>
+                                        <span class="ui-fs-20  d-block">Sipariş Durumu: <span
+                                                class="ui-fw-b ui-text-slate-blue">Gel Al Noktasında</span></span>
+                                        <div class="d-flex justify-content-between ui-pt-20">
+                                            <div>
+                                                <span class="d-block ui-pb-10 ui-opacity-50">Oluşturulma Tarihi</span>
+                                                <span class="d-block">20/10/2022</span>
+                                            </div>
+                                            <div>
+                                                <span class="d-block ui-pb-10 ui-opacity-50">Teslim Tarihi</span>
+                                                <span class="d-block">28/10/2022</span>
+                                            </div>
+                                        </div>
+
+                                        <span class="d-block ui-opacity-50 ui-pb-5">Notlar</span>
+                                        <span class="d-block ui-pb-20">Lorem ipsum dolor sit amet lorom <br> ipsum dolor
+                                            sit amet lorem ipsum..</span>
+                                        <hr class="ui-opacity-70 ui-mb-20">
+                                        <div class="ui-opacity-50 ui-pb-10">Müşteri Bilgileri</div>
+                                        <div class="ui-pb-5">Ceyda Kasabalı</div>
+                                        <div class="ui-pb-5">E-posta: Cydaksbli@gmail.com</div>
+                                        <div class="ui-pb-30">Tel No: +90 0555 555 55 55</div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-12">
+                                        <div class="ui-bg-light ui-p-15 ui-mb-20 ui-me-xxxl-80 ui-rounded-20">
+                                            <span class="ui-fw-b ui-pb-10 d-block">Fırsatlar</span>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <p class="ui-opacity-50 ui-pb-5">İhtiyaç</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                </div>
+                                                <div>
+                                                    <p class="ui-opacity-50  ui-pb-5">Teklif</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ui-bg-light ui-p-15 ui-me-xxxl-80 ui-rounded-20">
+                                            <span class="ui-fw-b ui-pb-10 d-block">Fırsatlar</span>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <p class="ui-opacity-50 ui-pb-5">İhtiyaç</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5">Kalem Kutusu</p>
+                                                </div>
+                                                <div>
+                                                    <p class="ui-opacity-50  ui-pb-5">Teklif</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+                                                    <p class="ui-fw-r ui-opacity-50 ui-pb-5"> 235.38 TL</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-9">
+
+                            <div class="ui-order-create-outer-outline-v2">
+                                <div class="ui-order-create-outline-v2 ui-pe-10 ui-pe-lg-5">
+                                    <table class="ui-order-items-table ui-default-button-added-table">
+                                        <thead>
+                                            <tr class="ui-data-table-header-scrollable bg-white">
+                                                <th class="ui-w-25 ui-text-left ui-ps-20">Ürün</th>
+                                                <th class="ui-w-17">Açıklama</th>
+                                                <th>Miktar</th>
+                                                <th>İndirim</th>
+                                                <th>KDV</th>
+                                                <th>Satış Fiyatı</th>
+                                                <th>Toplam</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <img class="ui-image-frame"
+                                                            src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                                                        <div>
+                                                            <span class="d-block ui-mb-10">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50">Boyut: 30x60</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <p class="ui-opacity-50">
+                                                        Yeşil Modern Katlanır Ayaklı Ahşap Çalışma Masası 30x60 cm
+                                                    </p>
+                                                </td>
+
+                                                <td class="ui-text-center">
+                                                    <div class="ui-counter">
+                                                        <button> <i class="ph-minus"></i></button>
+                                                        <input class="ui-number" type="number" min="1" max="999"
+                                                            minlength="3" value="1">
+                                                        <button><i class="ph-plus"></i></button>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-text-center">%22</td>
+                                                <td class="ui-text-center">36,55 TL</td>
+                                                <td class="ui-text-center">123,45 TL</td>
+                                                <td class="ui-text-center">265,99 TL</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <img class="ui-image-frame"
+                                                            src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                                                        <div>
+                                                            <span class="d-block ui-mb-10">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50">Boyut: 30x60</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <p class="ui-opacity-50">
+                                                        Yeşil Modern Katlanır Ayaklı Ahşap Çalışma Masası 30x60 cm
+                                                    </p>
+                                                </td>
+
+                                                <td class="ui-text-center">
+                                                    <div class="ui-counter">
+                                                        <button> <i class="ph-minus"></i></button>
+                                                        <input class="ui-number" type="number" min="1" max="999"
+                                                            minlength="3" value="1">
+                                                        <button><i class="ph-plus"></i></button>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-text-center">%22</td>
+                                                <td class="ui-text-center">36,55 TL</td>
+                                                <td class="ui-text-center">123,45 TL</td>
+                                                <td class="ui-text-center">265,99 TL</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <img class="ui-image-frame"
+                                                            src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                                                        <div>
+                                                            <span class="d-block ui-mb-10">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50">Boyut: 30x60</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <p class="ui-opacity-50">
+                                                        Yeşil Modern Katlanır Ayaklı Ahşap Çalışma Masası 30x60 cm
+                                                    </p>
+                                                </td>
+
+                                                <td class="ui-text-center">
+                                                    <div class="ui-counter">
+                                                        <button> <i class="ph-minus"></i></button>
+                                                        <input class="ui-number" type="number" min="1" max="999"
+                                                            minlength="3" value="1">
+                                                        <button><i class="ph-plus"></i></button>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-text-center">%22</td>
+                                                <td class="ui-text-center">36,55 TL</td>
+                                                <td class="ui-text-center">123,45 TL</td>
+                                                <td class="ui-text-center">265,99 TL</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <img class="ui-image-frame"
+                                                            src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                                                        <div>
+                                                            <span class="d-block ui-mb-10">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50">Boyut: 30x60</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <p class="ui-opacity-50">
+                                                        Yeşil Modern Katlanır Ayaklı Ahşap Çalışma Masası 30x60 cm </p>
+                                                </td>
+
+                                                <td class="ui-text-center">
+                                                    <div class="ui-counter">
+                                                        <button> <i class="ph-minus"></i></button>
+                                                        <input class="ui-number" type="number" min="1" max="999"
+                                                            minlength="3" value="1">
+                                                        <button><i class="ph-plus"></i></button>
+                                                    </div>
+                                                </td>
+
+                                                <td class="ui-text-center">%22</td>
+                                                <td class="ui-text-center">36,55 TL</td>
+                                                <td class="ui-text-center">123,45 TL</td>
+                                                <td class="ui-text-center">265,99 TL</td>
+
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="ui-pt-20 d-flex justify-content-between">
+                                    <p class="ui-opacity-50">İndirim Kodu: 1289209101</p>
+                                    <div class="d-flex justify-content-end ui-pe-xl-40">
+                                        <div class="ui-text-center">
+                                            <span class="d-block">İndirim Tutarı</span>
+                                            <span class="d-block">KDV</span>
+                                            <span class="d-block">Toplam</span>
+                                        </div>
+                                        <div>
+                                            <span class="d-block ui-ps-xl-40 ui-ps-20">-112,35₺</span>
+                                            <span class="d-block ui-ps-xl-40 ui-ps-20">+100₺</span>
+                                            <span class="d-block ui-ps-xl-40 ui-ps-20 ui-fw-b">303,35₺</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row gy-4 ui-mt-20 gy-4">
+                                <div class="col-xl-4">
+                                    <div class="ui-card ui-p-20">
+                                        <p class="ui-fs-20 ui-pb-10">Ödeme Bilgileri</p>
+                                        <div class="ui-credit-v1 blue">
+                                            <div class="credit-line"></div>
+                                            <div class="d-flex justify-content-between"><span class="credit-number">****
+                                                    **** **** 1901</span> <span class="credit-date">04/28</span></div>
+                                            <div class="ui-mt-30 d-flex justify-content-between">
+                                                <span class="ui-fs-20 ui-text-white">Ceyda Kasabalı</span>
+                                                <svg width="45" height="28" viewBox="0 0 45 28" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22.3834 3.03492C24.0133 4.29525 25.3308 5.90432 26.2361 7.74035C27.1415 9.57637 27.6111 11.5912 27.6092 13.6324C27.6105 15.6729 27.1406 17.687 26.2353 19.5223C25.3299 21.3576 24.0127 22.966 22.3834 24.226C20.7537 22.9658 19.4364 21.3571 18.531 19.5214C17.6257 17.6858 17.156 15.6713 17.1575 13.6304C17.156 11.5896 17.6257 9.57511 18.531 7.73945C19.4364 5.9038 20.7537 4.29504 22.3834 3.03492V3.03492ZM20.632 1.88078C18.9068 3.33153 17.5218 5.13404 16.573 7.16371C15.6242 9.19339 15.134 11.4018 15.1364 13.6364C15.1341 15.87 15.6239 18.0775 16.572 20.1064C17.5201 22.1353 18.904 23.9373 20.628 25.388C18.5453 26.5398 16.1928 27.1345 13.8045 27.1131C11.4161 27.0916 9.07509 26.4547 7.01404 25.2658C4.95299 24.0768 3.24371 22.3771 2.05613 20.3357C0.868553 18.2943 0.244025 15.9822 0.244629 13.6293C0.245234 11.2764 0.87095 8.96469 2.05958 6.92386C3.24821 4.88303 4.95835 3.18421 7.02002 1.99626C9.08168 0.808316 11.4231 0.172616 13.8114 0.152355C16.1998 0.132095 18.5519 0.72798 20.634 1.88078H20.632ZM24.1387 25.388C25.8628 23.9373 27.2466 22.1353 28.1947 20.1064C29.1429 18.0775 29.6327 15.87 29.6303 13.6364C29.6327 11.4018 29.1426 9.19339 28.1937 7.16371C27.2449 5.13404 25.86 3.33153 24.1347 1.88078C26.2168 0.72798 28.569 0.132095 30.9573 0.152355C33.3457 0.172616 35.6871 0.808316 37.7487 1.99626C39.8104 3.18421 41.5206 4.88303 42.7092 6.92386C43.8978 8.96469 44.5235 11.2764 44.5241 13.6293C44.5247 15.9822 43.9002 18.2943 42.7126 20.3357C41.525 22.3771 39.8158 24.0768 37.7547 25.2658C35.6937 26.4547 33.3526 27.0916 30.9643 27.1131C28.5759 27.1345 26.2235 26.5398 24.1408 25.388H24.1387Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="ui-card ui-p-20 ui-h-100">
+                                        <p class="ui-pb-10">Teslimat Adresi</p>
+                                        <p class="ui-opacity-50">Gel Al Noktası</p>
+                                        <p class="ui-opacity-50 ui-pb-20">Kazımdirik, Sanayi Cd. No:53, 35100
+                                            Bornova/İzmir</p>
+                                        <p class="ui-pb-10">Kargo Firması</p>
+                                        <p class="ui-opacity-50">İstanbul Ticaret Hırd. San. Aş</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="ui-card ui-p-20 ui-h-100">
+                                        <p class="ui-pb-10">Teslimat Bilgileri</p>
+                                        <div class="ui-divider-delivery-step">
+                                            <div class="delivery-divider"></div>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="delivery-item active">
+                                                    Sipariş Alındı
+                                                </div>
+                                                <div class="delivery-item active">
+                                                    Sipariş Hazırlandı
+                                                </div>
+                                                <div class="delivery-item active">
+                                                    Kargoya Verildi
+                                                </div>
+                                                <div class="delivery-item active">
+                                                    Gel-Al Noktasında
+                                                </div>
+                                                <div class="delivery-item">
+                                                    Teslim edildi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui-card ui-p-20 ui-mt-20">
+                                <div class="row gy-4 g-xl-0 g-4">
+                                    <div class="col-6 col-sm-3">
+                                        <a href="">
+                                            <div class="ui-order-bottom-icon-buttons ">
+                                                <i class="ph-question"></i>
+                                                <p>Siparişle ilgili soru sor</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <a href="">
+                                            <div class="ui-order-bottom-icon-buttons ui-border-right-buttons">
+                                                <i class="ph-warning-circle"></i>
+                                                <p>Siparişle ilgili sorun bildir</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <a href="">
+                                            <div class="ui-order-bottom-icon-buttons ui-border-right-buttons">
+                                                <i class="ph-x-circle"></i>
+                                                <p>Siparişi iptal et</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <a href="">
+                                            <div class="ui-order-bottom-icon-buttons ui-border-right-buttons">
+                                                <i class="ph-key-return"></i>
+                                                <p>İade talebinde bulun</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- :: END MASTER CONTENT :: -->
+        </div>
+
+    </div>
+    <!-- :: END MASTER CONTAINER :: -->
+
+
+    <!-- :: BEGIN SCRIPTS :: -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/vendors/anime/lib/anime.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/datatable.js"></script>
+    <script src="assets/js/datatableGlobal.js"></script>
+    <script src="assets/js/filterList.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="assets/vendors/apex-charts/apexcharts.min.js"></script>
+    <script src="assets/vendors/air-datepicker-3/air-datepicker.js"></script>
+    <script src="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- :: END SCRIPTS :: -->
+</body>
+
+</html>

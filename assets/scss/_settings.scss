@@ -1,0 +1,125 @@
+// General Settings
+
+$prefix: "ui-";
+
+// Colors
+
+$colors: (
+    "light": #eff1ff,
+    "blue": #145ce4,
+    "orange": #feb800,
+    "orange-light": #ffdc84,
+    "gray": #808080,
+    "green": #0abe32,
+    "green-light": #dcffe4,
+    "red": #ca2f2f,
+    "red-light": #ffdcdc,
+    "teal": #beac0a,
+    "teal-light": #fff9dc,
+    "slate-blue": #1b18c2,
+    "slate-blue-light": #dceaff,
+    "black": black,
+    "white": white,
+    "gray-light": #eee,
+);
+
+:root {
+    @each $name, $color in $colors {
+        --#{$prefix}#{$name}: #{$color};
+    }
+}
+
+@function color($color) {
+    @return var(--#{$prefix}#{$color});
+}
+
+// Breakpoints
+
+$breakpoints: (
+    "xs": 1,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+    "xxxl": 1600px,
+);
+
+// Typography
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+$baseFontFamily: "Quicksand", sans-serif;
+$baseFontSize: 18px;
+$baseFontWeight: 600;
+$baseLineHeight: 25px;
+
+$fontWeights: (
+    "l": 300,
+    // light
+    "r": 400,
+    // regular
+    "m": 500,
+    // medium
+    "sb": 600,
+    // semi-bold
+    "b": 700 // bold,,,,,,,,,,,,,,,,,,,,,,,,,
+);
+
+$textAligns: (
+    "left": left,
+    "center": center,
+    "right": right,
+    "justify": justify,
+    "initial": initial,
+);
+
+// Spacings
+
+$spacings: (0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100);
+
+// Sizes
+
+$sizes: (
+    0: 0%,
+    10: 10%,
+    15: 15%,
+    17: 17%,
+    20: 20%,
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    "100vh": 100vh,
+    "100vw": 100vw,
+    "50px": 50px,
+    "100px": 100px,
+    "150px": 150px,
+    "120px": 120px,
+    "140px": 140px,
+    "200px": 200px,
+    "250px": 250px,
+    "300px": 300px,
+    "350px": 350px,
+    "400px": 400px,
+    "450px": 450px,
+    "480px": 480px,
+    "500px": 500px,
+);
+
+$fontSizes: (
+    14: 14,
+    16: 16,
+    18: 18,
+    20: 20,
+    22: 22,
+    26: 26,
+    36: 36,
+);
+
+.#{$prefix}box-shadow {
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 7px;
+}
+.#{$prefix}text-underline {
+    text-decoration: underline;
+}

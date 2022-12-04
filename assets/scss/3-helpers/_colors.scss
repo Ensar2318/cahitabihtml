@@ -1,0 +1,10 @@
+// Text Colors and bg colors
+
+@each $textColorKey, $textColorValue in $colors {
+    .#{$prefix}text-#{$textColorKey} {
+        color: map-get($colors, $textColorKey) !important;
+    }
+    .#{$prefix}bg-#{$textColorKey} {
+        background-color: map-get($colors, $textColorKey) !important;
+    }
+}

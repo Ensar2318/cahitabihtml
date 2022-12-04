@@ -1,0 +1,41 @@
+@use "../2-mixins/display";
+
+.#{$prefix}master-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    @include display.flex;
+}
+
+.#{$prefix}master-main-wrapper {
+    @include display.flex;
+    @include display.flex-column;
+    transition: 0.4s ease;
+
+    width: 100%;
+}
+
+.#{$prefix}master-content {
+    flex: 1;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    @include media-down("xxl") {
+        margin: 20px;
+        margin-top: 0;
+    }
+    @include media-down("md") {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    &.scrollable {
+        min-height: calc(100vh - 150px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    @include media-down("xl") {
+        background-color: color("light");
+    }
+}

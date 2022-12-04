@@ -1,0 +1,101 @@
+.#{$prefix}card-accordion-table {
+    &.#{$prefix}card-accordion-table-clickable {
+        .#{$prefix}table-row {
+            cursor: pointer;
+        }
+    }
+    .#{$prefix}card-accordion-table-header {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 5px;
+        color: black;
+        span {
+            font-size: 20px;
+            @include media-down("md") {
+                font-size: 16px;
+            }
+            @include media-down("sm") {
+                font-size: 12px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .#{$prefix}card-accordion-table-body {
+        margin-top: 15px;
+        padding-right: 5px;
+
+        .#{$prefix}table-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            border: 2px solid transparent;
+            transition: 0.4s ease;
+            border-radius: 20px;
+
+            i {
+                font-size: 24px;
+                position: absolute;
+                right: -30px;
+                transition: 0.4s ease;
+            }
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                position: relative;
+                pointer-events: none;
+                font-size: 20px;
+                @include media-down("md") {
+                    font-size: 16px;
+                }
+                @include media-down("sm") {
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+
+            .#{$prefix}accordion-content {
+                display: none;
+                flex: 0 0 100%;
+                padding: 10px 0;
+            }
+
+            &.active,
+            &.click-active {
+                padding: 10px;
+
+                border-color: rgba(black, 0.2);
+
+                i {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+.#{$prefix}md-body-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 240px;
+}
+.#{$prefix}lg-body-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+    padding-right: 5px;
+}
+.#{$prefix}xl-body-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 350px;
+    padding-right: 5px;
+}
+.#{$prefix}fullscreen-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 145px);
+    padding-right: 5px;
+}

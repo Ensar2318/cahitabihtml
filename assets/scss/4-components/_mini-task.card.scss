@@ -1,0 +1,47 @@
+.#{$prefix}mini-task-card {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    .#{$prefix}mini-task-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 10px;
+        word-break: break-word;
+        .#{$prefix}btn {
+            font-weight: 700;
+            cursor: initial;
+            pointer-events: none;
+
+            &.theme-orange-light {
+                background-color: #ffecd0;
+                color: color("orange");
+            }
+        }
+
+        .#{$prefix}badge {
+            margin-left: auto;
+        }
+    }
+
+    .#{$prefix}mini-task-body {
+        font-size: 16px;
+
+        .#{$prefix}mini-task-title {
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .#{$prefix}mini-task-date {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.5;
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}

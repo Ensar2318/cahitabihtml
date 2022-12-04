@@ -1,0 +1,11 @@
+@each $spacing in $spacings {
+    // Margins
+
+    .#{$prefix}opacity-#{$spacing} {
+        @if ($spacing == 100) {
+            opacity: 1;
+        } @else {
+            opacity: #{"."}+ $spacing !important;
+        }
+    }
+}

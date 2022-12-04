@@ -1,0 +1,137 @@
+.#{$prefix}btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    border-radius: 10px;
+    padding: 8px 22px;
+    transition: 0.5s;
+    &.#{$prefix}btn-sm {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+    &.#{$prefix}btn-responsive {
+        @include media-down("xl") {
+            span {
+                display: none;
+            }
+            i {
+                margin: 0;
+            }
+        }
+    }
+
+    span {
+        + i {
+            margin-left: 10px;
+        }
+    }
+
+    i {
+        + span {
+            margin-left: 10px;
+        }
+    }
+
+    i {
+        font-size: 28px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.theme-orange {
+        background-color: color("orange");
+        color: white;
+    }
+
+    &.theme-red {
+        background-color: color("red");
+        color: white;
+    }
+
+    &.theme-orange-reverse {
+        background-color: white;
+        color: color("orange");
+    }
+    &.theme-white {
+        background-color: white;
+        color: black;
+    }
+
+    &.theme-link {
+        background-color: transparent;
+        color: color("slate-blue");
+        text-decoration: underline;
+    }
+
+    &.theme-slate-blue {
+        color: white;
+        background-color: color("slate-blue");
+    }
+
+    &.#{$prefix}slide-active {
+        background-color: color("blue");
+        opacity: 0.7;
+        color: white;
+    }
+}
+
+.#{$prefix}btn-add {
+    background-color: color("orange");
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: white;
+    i {
+        color: white;
+    }
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 95;
+}
+
+@include media-down("lg") {
+    .#{$prefix}btn-add {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.#{$prefix}responsive-button {
+    > * {
+        pointer-events: none;
+    }
+    span {
+        display: none;
+    }
+    @include media-down("xl") {
+        display: flex;
+        align-items: end;
+        justify-items: end;
+        i {
+            pointer-events: none;
+            font-size: 24px;
+            padding-bottom: 8px;
+        }
+    }
+    @include media-up("xl") {
+        i {
+            display: none;
+        }
+        span {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.#{$prefix}badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 4px 12px;
+
+    span {
+        + i {
+            margin-left: 10px;
+        }
+    }
+
+    i {
+        + span {
+            margin-left: 10px;
+        }
+    }
+
+    &.theme-green-light {
+        background-color: color("green-light");
+        color: color("green");
+    }
+
+    &.theme-red-light {
+        background-color: color("red-light");
+        color: color("red");
+    }
+
+    &.theme-teal-light {
+        background-color: color("teal-light");
+        color: color("teal");
+    }
+    &.theme-slate-blue-light {
+        background-color: color("slate-blue-light");
+        color: color("slate-blue");
+    }
+}

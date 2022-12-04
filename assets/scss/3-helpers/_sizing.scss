@@ -1,0 +1,25 @@
+@each $key, $value in $sizes {
+  .#{$prefix}w-#{$key} {
+    width: $value;
+  }
+
+  .#{$prefix}min-w-#{$key} {
+    min-width: $value;
+  }
+
+  .#{$prefix}max-w-#{$key} {
+    max-width: $value;
+  }
+
+  .#{$prefix}h-#{$key} {
+    height: $value;
+  }
+
+  .#{$prefix}min-h-#{$key} {
+    min-height: $value;
+  }
+
+  .#{$prefix}max-h-#{$key} {
+    max-height: $value;
+  }
+}

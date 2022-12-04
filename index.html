@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.css">
+    <link rel="stylesheet" href="assets/vendors/apex-charts/apexcharts.css">
+    <link rel="stylesheet" href="assets/vendors/air-datepicker-3/air-datepicker.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- :: PHOSPOR ICONS :: -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+
+<body>
+
+    <!-- :: BEGIN MASTER CONTAINER :: -->
+    <div class="ui-master-container">
+        <!-- :: BEGIN MASTER SIDEBAR :: -->
+        <div class="ui-sidebar-overlay"></div>
+        <div class="ui-master-sidebar">
+            <!-- :: BEGIN MASTER SIDEBAR HEADER :: -->
+            <div class="ui-sidebar-header">
+                <a href="#" class="ui-brand">
+                    <a class="ui-mobile-sidebar-toggle" href=""> <i class="ph-x"></i></a>
+                    <img src="assets/img/logo/logo.png" alt="">
+                </a>
+            </div>
+            <!-- :: END MASTER SIDEBAR HEADER :: -->
+
+            <!-- :: BEGIN MASTER SIDEBAR BODY :: -->
+            <div class="ui-sidebar-body">
+
+                <nav class="ui-sidebar-nav">
+                    <div class="ui-sidebar-nav-top">
+                        <div class="ui-sidebar-nav-item active">
+                            <a href="index.html">
+                                <i class="ph-house"></i>
+                                <span> Anasayfa</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="musteri-detay.html">
+                                <i class="ph-users"></i>
+                                <span> Müşteriler</span>
+                            </a>
+                            <span class="ui-sidebar-submenu-toggle">
+                                <i class="ph-caret-down"></i>
+                            </span>
+                            <div class="ui-sidebar-submenu">
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-tag"></i>
+                                <span> Fırsatlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-chart-line-up"></i>
+                                <span>Aktiviteler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-clipboard-text"></i>
+                                <span> Görevler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="siparis-olustur.html">
+                                <i class="ph-shopping-cart"></i>
+                                <span>Siparişler</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ui-sidebar-nav-bottom">
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-gear"></i>
+                                <span>Ayarlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-sign-out"></i>
+                                <span> Çıkış Yap</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <!-- :: END MASTER SIDEBAR BODY :: -->
+
+        </div>
+        <!-- :: END MASTER SIDEBAR :: -->
+        <!-- :: BEGIN Quest Bar :: -->
+        <div class="ui-quest-sidebar openable-quest-sidebar ui-p-20 ">
+            <a class="openQuest d-xxl-none d-flex" href=""> <i class="ph-x"></i></a>
+            <span class="ui-fs-22 d-block ui-pb-25">
+                Görevler
+            </span>
+            <div class="d-flex justify-content-xxl-between gap-xxl-0 gap-3 quest-buttons">
+                <button class="ui-btn theme-orange" data-ajax-filter="atanan">
+                    Atanan
+                </button>
+                <button class="ui-btn theme-orange-reverse" data-ajax-filter="bekleyen">
+                    Bekleyen
+                </button>
+                <button data-ajax-filter="all" class="ui-text-blue ui-fw-b ui-text-underline">Hepsini Gör</button>
+            </div>
+            <div class="ui-quest-body">
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Make a website homepage</span>
+                        <div class="ui-quest-notify"></div>
+                    </div>
+                    <div class="ui-quest-desc">
+                        İstanBlue Website
+                    </div>
+                </div>
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Make a website homepage</span>
+                        <div class="ui-quest-notify"></div>
+                    </div>
+                    <div class="ui-quest-desc">
+                        İstanBlue Website
+                    </div>
+                </div>
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Fix bugs</span>
+                        <div class="ui-quest-notify"></div>
+                    </div>
+                    <div class="ui-quest-desc">
+                        BB App
+                    </div>
+                </div>
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Make a website homepage</span>
+                    </div>
+                    <div class="ui-quest-desc">
+                        İstanBlue Website
+                    </div>
+                </div>
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Make a website homepage</span>
+                    </div>
+                    <div class="ui-quest-desc">
+                        İstanBlue Website
+                    </div>
+                </div>
+                <div class="ui-quest-item">
+                    <div class="ui-quest-title">
+                        <span>Check Attachements</span>
+                    </div>
+                    <div class="ui-quest-desc">
+                        İstanBlue Website
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- :: END Quest Bar :: -->
+        <div class="ui-master-main-wrapper">
+            <!-- :: BEGIN MASTER TOPBAR :: -->
+            <div class="ui-master-topbar">
+
+                <div class="ui-topbar-content">
+                    <!-- :: BEGIN TOPBAR MAIN :: -->
+
+                    <div class="ui-topbar-main">
+                        <div class="ui-mobile-toggle-side">
+                            <a href="" class="ui-mobile-sidebar-toggle">
+                                <i class="ph-list"></i>
+                            </a>
+                            <a href="#" class="ui-mobile-brand d-sm-block d-none">
+                                <img src="assets/img/logo/logo.png" alt="">
+                            </a>
+                        </div>
+                        <h1 class="ui-topbar-title small-v">Sipariş Oluştur</h1>
+
+                        <div class="ui-topbar-search small-v" ui-data-search-selected="searchbar">
+                            <div class="ui-search-input">
+                                <i class="ph-magnifying-glass"></i>
+                                <input type="text" name="query" id="ui-main-search-input"
+                                    placeholder="Aramak için bir şeyler yaz" autocomplete="off">
+                            </div>
+
+                            <div class="ui-search-results"></div>
+                        </div>
+
+                        <div class="ui-setting-toolbar">
+                            <div class="ui-toolbar-buttons">
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn"><i
+                                            class="ph-shopping-cart"></i></button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-shopping-button-in-shopping-result-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-pb-5 ui-fs-16">Sipariş
+                                                Özeti</span>
+                                            <div class="d-flex justify-content-between ui-pb-10 ui-pe-10">
+                                                <span class="ui-fs-16">Ürün</span>
+                                                <span class="ui-fs-16">Toplam</span>
+                                            </div>
+
+                                            <div class="ui-shopping-dropdown-container ui-pe-10">
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="ui-mt-10 ui-mb-10">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <span class="d-block ui-fs-14">İndirim Tutarı</span>
+                                                    <span class="d-block ui-fs-14">KDV</span>
+                                                    <span class="d-block ui-fs-14">Toplam</span>
+                                                </div>
+                                                <div>
+                                                    <span class="d-block  ui-fs-14">-112,35₺</span>
+                                                    <span class="d-block  ui-fs-14">+100₺</span>
+                                                    <span class="d-block  ui-fs-14">303,35₺</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn">
+                                        <span class="ui-notify"></span>
+                                        <i class="ph-bell"></i>
+                                    </button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-notification-dropdown-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-fs-16">Bildirimler</span>
+                                            <div class="ui-notification-body">
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button ui-data-search-target="searchbar" class="ui-icon-btn d-sm-none d-block"><i
+                                        class="ph-magnifying-glass"></i></button>
+                                <button class="openQuest ui-icon-btn d-xxl-none d-flex"><i
+                                        class="ph-newspaper"></i></button>
+                                <button class="openCalender ui-icon-btn d-xl-none d-flex"><i
+                                        class="ph-lightning"></i></button>
+
+                            </div>
+                            <div class="ui-toolbar-user">
+                                <img class="ui-user-profile" src="https://via.placeholder.com/60">
+                                <div class="ui-user-detail">
+                                    <div class="ui-user-name">Billur B.</div>
+                                    <div class="ui-user-title">BBTech Company</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- :: END TOPBAR MAIN :: -->
+
+                    <!-- :: BEGIN TOPBAR ACTIONS :: -->
+                    <div class="ui-topbar-actions">
+
+                    </div>
+                    <!-- :: END TOPBAR ACTIONS :: -->
+                </div>
+            </div>
+
+            <!-- :: END MASTER TOPBAR :: -->
+
+            <!-- :: BEGIN MASTER CONTENT :: -->
+            <div class="ui-master-content ui-p-xl-0 ui-p-10">
+                <div class="row ui-m-0">
+                    <div class="col-xl-8 ui-fullscreen-scroll">
+                        <div class="ui-mb-20">
+                            <div class="ui-card">
+                                <div class="ui-card-header">
+                                    <div class="ui-card-title">
+                                        <i class="ph-clock ui-me-10 ui-opacity-50"></i>
+                                        <span class="ui-opacity-50 d-md-block d-none">Bütçe Grafiği (Son 30 gün)</span>
+                                    </div>
+                                </div>
+                                <div class="ui-card-body">
+                                    <div id="chart">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-mb-20">
+                            <div class="ui-card">
+                                <div class="ui-card-header">
+                                    <div class="ui-card-title">
+                                        <i class="ph-clock ui-me-10 ui-opacity-50"></i>
+                                        <span class="ui-opacity-50 d-md-block d-none">Bütçe Grafiği (Son 30 gün)</span>
+                                    </div>
+                                </div>
+                                <div class="ui-card-body">
+                                    <div id="chart2">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gy-4 mb-4 ui-m-0">
+                            <div class="col-md-6 col-lg-12 col-xxl-4">
+                                <div class="ui-info-card">
+                                    <div class="ui-info-card-header">
+                                        <span class="ui-info-card-title ui-opacity-50">Son 1 Ay</span>
+                                        <span class="ui-info-card-direction">
+                                            <i class="ph-arrow-up ui-text-green"></i>
+                                            <span class="ui-badge theme-green-light">
+                                                %32
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="ui-info-card-body">
+                                        <div class="ui-info-value-title">12.432₺</div>
+                                        <div class="ui-info-value-subtitle">Sipariş Tutarı</div>
+                                    </div>
+                                    <div class="ui-info-card-footer">
+                                        <span class="ui-info-card-footer-value ui-opacity-50 ui-fw-b">1.234</span>
+                                        <span class="ui-info-card-footer-title ui-opacity-50">Toplam Sipariş</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xxl-4">
+                                <div class="ui-info-card">
+                                    <div class="ui-info-card-header">
+                                        <span class="ui-info-card-title ui-opacity-50">Son 1 Yıl</span>
+                                        <span class="ui-info-card-direction">
+                                            <i class="ph-arrow-up ui-text-green"></i>
+                                            <span class="ui-badge theme-green-light">
+                                                %32
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="ui-info-card-body">
+                                        <div class="ui-info-value-title">1.450₺</div>
+                                        <div class="ui-info-value-subtitle">İade Tutarı</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 col-xxl-4">
+                                <div class="ui-info-card">
+                                    <div class="ui-info-card-header">
+                                        <span class="ui-info-card-direction">
+                                            <i class="ph-arrow-down ui-text-red"></i>
+                                            <span class="ui-badge theme-red-light">
+                                                %32
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="ui-info-card-body">
+                                        <div class="ui-info-value-title">26.000₺</div>
+                                        <div class="ui-info-value-subtitle">Toplam Bakiye</div>
+                                    </div>
+                                    <div class="ui-info-card-footer">
+                                        <span class="ui-info-card-footer-value ui-opacity-50 ui-fw-b">1000₺</span>
+                                        <span class="ui-info-card-footer-title ui-opacity-50">Geciken</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ui-m-0 ui-pt-20 g-0 g-md-3">
+                            <div class="col-12">
+                                <div class="ui-card ui-bg-light">
+                                    <div class="ui-card-header">
+                                        <div class="ui-card-title">
+                                            <i class="ph-clock ui-me-10 ui-text-orange"></i>
+                                            <span class="ui-opacity-50 d-md-block d-none">Son Aktiviteler</span>
+                                        </div>
+                                        <div class="ui-card-actions gap-2">
+                                            <a href="#" class="ui-btn ui-btn-responsive ui-opacity-50">
+                                                <i class="ph-plus"></i>
+                                                <span class="">Yeni Ekle</span>
+                                            </a>
+                                            <a href="#" class="ui-btn ui-p-5 ui-btn-responsive theme-white ui-btn-sm"
+                                                ui-data-slide-target="waiting-area-filter">
+                                                <span class="">Filtrele</span>
+                                                <i class="ph-funnel ui-text-orange"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="px-4" ui-data-slide-selected="waiting-area-filter"
+                                        style="display: none;">
+                                        <div class="ui-data-table-search my-2  ui-bg-white">
+                                            <i class="ph-magnifying-glass"></i>
+                                            <input type="text" placeholder="Aramak için bir şeyler yaz"
+                                                autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="ui-card-body">
+                                        <div class="ui-card-accordion-table">
+                                            <div class="ui-card-accordion-table-header">
+                                                <span>Müşteri</span>
+                                                <span>İhtiyaç</span>
+                                                <span>Teklif</span>
+                                                <span>Tarih Aralığı</span>
+                                            </div>
+                                            <div class="ui-md-body-scroll">
+                                                <div class="ui-card-accordion-table-body ">
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ui-m-0 ui-pt-20 g-0 g-md-3">
+                            <div class="col-12">
+                                <div class="ui-card ui-bg-light">
+                                    <div class="ui-card-header">
+                                        <div class="ui-card-title">
+                                            <i class="ph-list-dashes ui-me-10 ui-text-blue"></i>
+                                            <span class="ui-opacity-50 d-md-block d-none">Bekleyen Fırsatlar</span>
+                                        </div>
+                                        <div class="ui-card-actions gap-2">
+                                            <a href="#" class="ui-btn ui-btn-responsive ui-opacity-50">
+                                                <i class="ph-plus"></i>
+                                                <span class="">Yeni Ekle</span>
+                                            </a>
+                                            <a href="#" class="ui-btn ui-p-5 ui-btn-responsive theme-white ui-btn-sm"
+                                                ui-data-slide-target="deal-items-filter">
+                                                <span class="">Filtrele</span>
+                                                <i class="ph-funnel ui-text-orange"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="px-4" ui-data-slide-selected="deal-items-filter" style="display: none;">
+                                        <div class="ui-data-table-search my-2  ui-bg-white">
+                                            <i class="ph-magnifying-glass"></i>
+                                            <input type="text" placeholder="Aramak için bir şeyler yaz"
+                                                autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="ui-card-body">
+                                        <div class="ui-card-accordion-table">
+                                            <div class="ui-card-accordion-table-header">
+                                                <span>Müşteri</span>
+                                                <span>İhtiyaç</span>
+                                                <span>Teklif</span>
+                                                <span>Tarih Aralığı</span>
+                                            </div>
+                                            <div class="ui-md-body-scroll">
+                                                <div class="ui-card-accordion-table-body ">
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                    <div class="ui-table-row">
+                                                        <span class="ui-opacity-50">
+                                                            Billur H.
+                                                        </span>
+                                                        <span>Dijital Gösterge</span>
+                                                        <span class="ui-opacity-50">185,92 TL</span>
+                                                        <span class="ui-opacity-50">13.10.22-18.12.22</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="ui-calender-side-responsive">
+                            <i class="openCalender ph-x d-lg-none d-block"></i>
+                            <div id="el" class="calender"></div>
+
+
+                            <div class="d-flex gap-3 ui-mt-30">
+                                <div class="me-auto">
+                                    <span>14.10.2022</span>
+                                </div>
+                                <button class="ui-btn ui-btn-sm theme-orange">
+                                    Atanan
+                                </button>
+                                <button class="ui-btn ui-btn-sm theme-orange-reverse">
+                                    Bekleyen
+                                </button>
+                            </div>
+                            <div class="ui-divider ui-border-light mt-3"></div>
+                            <div class="ui-quest-sidebar-calender  ui-bg-white">
+                                <div class="ui-quest-body">
+                                    <div class="ui-quest-item">
+                                        <div class="ui-quest-title">
+                                            <span>Make a website homepage</span>
+                                            <div class="ui-quest-notify"></div>
+                                        </div>
+                                        <div class="ui-quest-desc">
+                                            İstanBlue Website
+                                        </div>
+                                    </div>
+                                    <div class="ui-quest-item">
+                                        <div class="ui-quest-title">
+                                            <span>Make a website homepage</span>
+                                            <div class="ui-quest-notify"></div>
+                                        </div>
+                                        <div class="ui-quest-desc">
+                                            İstanBlue Website
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- :: END MASTER CONTENT :: -->
+        </div>
+
+    </div>
+    <!-- :: END MASTER CONTAINER :: -->
+
+
+    <!-- :: BEGIN SCRIPTS :: -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/vendors/anime/lib/anime.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/datatable.js"></script>
+    <script src="assets/js/datatableGlobal.js"></script>
+    <script src="assets/js/filterList.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="assets/vendors/apex-charts/apexcharts.min.js"></script>
+    <script src="assets/vendors/air-datepicker-3/air-datepicker.js"></script>
+    <script src="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- :: END SCRIPTS :: -->
+
+
+    <!-- :: THIS PAGE SCRIPTS :: -->
+
+    <script>
+        var options = {
+            colors: ["#145CE4"],
+            series: [{
+                name: "Desktops",
+                data: [10, 25, 40, 35],
+            },],
+            chart: {
+                height: 350,
+                type: "line",
+                toolbar: {
+                    show: false
+                },
+                zoom: {
+                    enabled: true,
+                },
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                show: true,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 5,
+                dashArray: 0,
+            },
+            grid: {
+                row: {
+                    colors: ["transparent"], // takes an array which will be repeated on columns
+                    opacity: 0.5,
+                },
+            },
+            xaxis: {
+                categories: ["1. Hafta", "2. Hafta", "3. Hafta", "4. Hafta"],
+            },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+
+        var options2 = {
+            colors: ["#F7A90B"],
+            series: [{
+                name: "Desktops",
+                data: [25, 35, 20],
+            },],
+            chart: {
+                height: 350,
+                type: "line",
+                toolbar: {
+                    show: false
+                },
+                zoom: {
+                    enabled: true,
+                },
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                show: true,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 5,
+                dashArray: 0,
+            },
+            grid: {
+                row: {
+                    colors: ["transparent"], // takes an array which will be repeated on columns
+                    opacity: 0.5,
+                },
+            },
+            xaxis: {
+                categories: ["1. Ay", "2. Ay", "3. Ay"],
+            },
+        };
+        var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+        chart2.render();
+
+        // Calendar
+        let today = new Date();
+        new AirDatepicker('#el', {
+            inline: true,
+            onRenderCell({ date, cellType }) {
+                // today.getMonth() databaseden gelen ay olacak
+                // let dates = [1, 5, 7, 10, 15, 20, 25], buda notification olan günler
+                if (date.getMonth() == today.getMonth()) {
+                    let dates = [1, 5, 7, 10, 15, 20, 25],
+                        isDay = cellType === 'day',
+                        _date = date.getDate(),
+                        shouldChangeContent = isDay && dates.includes(_date)
+                    return {
+                        classes: shouldChangeContent ? '-event-cell-' : undefined,
+
+                    }
+                }
+
+            },
+            onSelect: (date, formattedDate, datepicker) => {
+                // Tarih seçildiğinde
+                console.log(date, formattedDate, datepicker);
+            },
+        })
+    </script>
+
+    <script>
+        $(document).on("click", ".quest-buttons button", function () {
+            let filterKey = $(this).attr("data-ajax-filter");
+            $(".openable-quest-sidebar .ui-quest-body").html("");
+            $.ajax({
+                type: "get",
+                url: "../data/quest.json",
+                data: {
+                    query: filterKey
+                },
+                dataType: "json",
+                success: function (response) {
+                    response.forEach(quest => {
+                        let htmlItem = `
+                        <div class="ui-quest-item">
+                            <div class="ui-quest-title">
+                                <span>${quest.title}</span>
+                                <div class="ui-quest-notify"></div>
+                            </div>
+                            <div class="ui-quest-desc">
+                               ${quest.desc}
+                            </div>
+                        </div>
+                        `;
+                        $(".openable-quest-sidebar .ui-quest-body").append(htmlItem);
+
+                    });
+                }
+            });
+
+        });
+    </script>
+    <!-- :: END THIS PAGE SCRIPTS :: -->
+
+
+
+</body>
+
+</html>

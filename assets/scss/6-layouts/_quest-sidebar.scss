@@ -1,0 +1,134 @@
+.#{$prefix}quest-sidebar {
+    background-color: color("light");
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+
+    .openQuest {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 32px;
+    }
+    @include media-down("xxl") {
+        &.active {
+            transform: translate3d(0, 0, 0px);
+        }
+        max-width: 100%;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        transition: 0.5s;
+        transform: translate3d(-100%, 0, 0px);
+    }
+    .#{$prefix}quest-body {
+        padding-top: 5px;
+        overflow: auto;
+        height: calc(100% - 108px);
+        .#{$prefix}quest-item {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin-right: 20px;
+            border-bottom: solid 1px #bec6ff;
+
+            .ui-quest-notify {
+                width: 20px;
+                height: 20px;
+                border-radius: 20px;
+                background-color: color("red");
+            }
+            .#{$prefix}quest-title {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 10px;
+                padding-right: 25px;
+
+                span {
+                    font-size: 600;
+                    font-size: 20px;
+                }
+            }
+            .#{$prefix}quest-desc {
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+.#{$prefix}quest-sidebar-calender {
+    background-color: color("light");
+    width: 100%;
+    position: relative;
+
+    .#{$prefix}quest-body {
+        padding-top: 5px;
+        overflow: auto;
+        height: 300px;
+        .#{$prefix}quest-item {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin-right: 20px;
+            border-bottom: solid 1px #bec6ff;
+
+            .ui-quest-notify {
+                min-width: 20px;
+                min-height: 20px;
+                height: 20px;
+                height: 20px;
+                border-radius: 20px;
+                background-color: color("red");
+            }
+            .#{$prefix}quest-title {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 5px;
+                padding-right: 15px;
+
+                span {
+                    font-size: 600;
+                    font-size: 18px;
+                }
+            }
+            .#{$prefix}quest-desc {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.ui-calender-side-responsive {
+    .openCalender {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 32px;
+    }
+    @include media-down("xl") {
+        .calender {
+            display: flex;
+            justify-content: center;
+            max-width: 600px;
+            margin: auto;
+        }
+        &.active {
+            transform: translate3d(0, 0, 0px);
+        }
+        padding: 20px;
+        max-width: 100%;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        transition: 0.5s;
+        transform: translate3d(-100%, 0, 0px);
+        background-color: white;
+    }
+}

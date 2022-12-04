@@ -1,0 +1,58 @@
+$borderSides: (
+    'all',
+    'top',
+    'left',
+    'right',
+    'bottom'
+);
+
+$borderDefaultColor: color('gray');
+
+@each $borderSide in $borderSides {
+    
+    @if ($borderSide == 'all') {
+        .#{$prefix}border {
+            border: 1px solid $borderDefaultColor !important;
+        }
+
+        @each $colorName, $colorValue in $colors {
+            .#{$prefix}border-#{$colorName} {
+                border-color: color($colorName) !important;
+            }
+        }
+
+
+    } @else {
+        .#{$prefix}border-#{$borderSide} {
+            border-#{$borderSide}: 1px solid $borderDefaultColor !important;
+        }
+
+        @each $colorName, $colorValue in $colors {
+            .#{$prefix}border-#{$borderSide}-#{$colorName} {
+                border-#{$borderSide}-color: color($colorName) !important;
+            }
+        }
+    }
+
+
+}
+
+.#{$prefix}divider {
+    border-top: 1px solid $borderDefaultColor;
+}
+
+$borderRadiuses: (
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    100
+);
+
+@each $borderRadius in $borderRadiuses {
+    .#{$prefix}rounded-#{$borderRadius} {
+        border-radius: #{$borderRadius}px !important;
+    }
+}

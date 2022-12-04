@@ -1,0 +1,361 @@
+.#{$prefix}order-steps {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+    margin-top: 50px;
+    padding-top: 25px;
+
+    .#{$prefix}order-step {
+        position: relative;
+        flex: 1;
+        text-align: center;
+        span {
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
+        &.active {
+            span {
+                color: rgba($color: #000000, $alpha: 1);
+            }
+            &::before {
+                background-color: color("slate-blue");
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -33px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background-color: #71a2ff;
+        }
+        &:not(:first-child) {
+            &::after {
+                position: absolute;
+                top: -25px;
+                left: calc(-50% - 13px / 2);
+                display: block;
+                width: 100%;
+                height: 2px;
+                content: "";
+                background-color: color("slate-blue");
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.#{$prefix}order-create-outline {
+    background-color: white;
+    margin-top: 60px;
+    border-radius: 20px;
+    padding: 10px;
+    .#{$prefix}order-create-outline-scrollable {
+        height: 500px;
+        overflow: auto;
+    }
+}
+.#{$prefix}shopping-result-container {
+    @include media-up("xl") {
+        width: 480px;
+    }
+    @include media-down("xl") {
+        padding: 40px;
+        background-color: color("light");
+        border-radius: 20px;
+    }
+}
+
+.#{$prefix}order-create-outline-v2 {
+    height: 350px;
+    overflow: auto;
+}
+.#{$prefix}order-create-outer-outline-v2 {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.#{$prefix}order-items-table {
+    width: 100%;
+    table-layout: fixed;
+    .#{$prefix}table-close-btn {
+        display: none;
+    }
+    thead {
+        @include media-down("xl") {
+            display: none;
+        }
+        tr {
+            th {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                vertical-align: top;
+            }
+            &:not(:last-child) {
+                td {
+                    padding-bottom: 50px;
+                }
+            }
+        }
+        @include media-down("xl") {
+            tr {
+                display: block;
+                border: solid 1px color("gray");
+                padding: 20px;
+                border-radius: 20px;
+                margin-bottom: 20px;
+                position: relative;
+                .ui-table-close-btn {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 25px;
+                    color: color("orange");
+                    background-color: white;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &:not(.active) {
+                    td {
+                        padding-bottom: 0 !important;
+                    }
+                    td:not(:first-child) {
+                        display: none;
+                    }
+                }
+
+                td {
+                    display: block;
+                }
+
+                &:not(:last-child) {
+                    td {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .#{$prefix}image-frame {
+        width: 92px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    .#{$prefix}counter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        width: 80px;
+        border-radius: 5px;
+        background-color: color("slate-blue");
+        gap: 4px;
+        color: white;
+        i {
+            font-weight: 600;
+        }
+        .#{$prefix}number {
+            font-weight: 600;
+            width: 20px;
+            text-align: center;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.#{$prefix}order-checkbox {
+    display: flex;
+    padding: 16px 45px 16px 16px;
+    border-radius: 20px;
+    background-color: white;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    border: solid 2px white;
+    transition: 0.5s;
+
+    &:has(:checked) {
+        border-color: color("orange");
+    }
+    input[type="radio"] {
+        border: 1px solid color("orange");
+        padding: 0.5em;
+        width: 15px;
+        height: 15px;
+        -webkit-appearance: none;
+        transition: 0.5s;
+    }
+    input[type="radio"]:checked {
+        background-color: color("orange");
+        background-size: 9px 9px;
+    }
+}
+
+.#{$prefix}table-image-responsive {
+    width: 92px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.#{$prefix}checkout-result-wrap {
+    overflow: auto;
+    padding-right: 20px;
+    height: 400px;
+    @include media-down("xl") {
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+    }
+}
+
+.#{$prefix}credit-v1 {
+    &.blue {
+        background: linear-gradient(104.54deg, #bec6ff 2.06%, #a9bcff 28.58%, #71a2ff 100%);
+    }
+    &.orange {
+        background: linear-gradient(104.54deg, #ffc2be 2.06%, #edaa84 28.58%, #ff7171 100%);
+    }
+    border-radius: 20px;
+    padding: 25px 15px 15px 15px;
+    .credit-line {
+        height: 38px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: white;
+        margin-bottom: 24px;
+    }
+    .credit-number {
+        font-weight: 700;
+        font-size: 17px;
+        color: white;
+    }
+    .credit-date {
+        font-weight: 700;
+        font-size: 17px;
+        color: white;
+    }
+}
+
+.#{$prefix}horizontal-line {
+    width: 1px;
+    height: 100%;
+    opacity: 0.5;
+    margin-right: 20px;
+    background-color: black;
+}
+
+.#{$prefix}order-detail-status {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.#{$prefix}divider-delivery-step {
+    .delivery-divider {
+        width: 95%;
+        height: 1px;
+        background-color: color("slate-blue");
+        margin: auto;
+        margin-bottom: 15px;
+    }
+    .delivery-item {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        rotate: 180deg;
+        position: relative;
+        color: #71a2ff;
+        text-align: end;
+
+        &.active {
+            color: color("slate-blue");
+            &::after {
+                background-color: color("slate-blue");
+            }
+        }
+        &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: #71a2ff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -20px;
+        }
+    }
+}
+
+.#{$prefix}order-bottom-icon-buttons {
+    text-align: center;
+    transition: 0.5s;
+    &:hover {
+        background-color: rgba(143, 143, 143, 0.1);
+    }
+    &.ui-border-right-buttons {
+        border-left: solid 1px color("gray");
+        @include media-down("sm") {
+            border-left: none;
+        }
+    }
+    i {
+        color: color("gray");
+        -webkit-text-stroke: 1px color("gray");
+        font-size: 40px;
+        padding-bottom: 10px;
+    }
+    p {
+        text-align: 20px;
+        color: color("orange");
+    }
+}
+
+.#{$prefix}step-outer-area {
+    .#{$prefix}step-outer-area-item {
+        cursor: pointer;
+        transition: all 0.3s linear;
+        &.#{$prefix}hidden {
+            opacity: 0;
+        }
+        display: none;
+        &.#{$prefix}show {
+            display: block;
+            animation: fadeIn 0.3s alternate;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

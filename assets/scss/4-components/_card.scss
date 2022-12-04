@@ -1,0 +1,98 @@
+.#{$prefix}card {
+    background-color: white;
+    border-radius: 20px;
+
+    .#{$prefix}card-header {
+        padding: 10px 0;
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(black, 0.2);
+        @include media-down("sm") {
+            margin: 0;
+        }
+        .#{$prefix}card-title {
+            display: inline-flex;
+            align-items: center;
+
+            i {
+                font-size: 24px;
+            }
+        }
+
+        .#{$prefix}card-actions {
+            display: inline-flex;
+            align-items: center;
+
+            .#{$prefix}btn {
+                padding: 0;
+            }
+        }
+    }
+
+    .#{$prefix}card-body {
+        padding: 20px;
+        @include media-down("sm") {
+            padding: 5px;
+        }
+    }
+
+    .#{$prefix}card-footer {
+        padding: 20px 0;
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(black, 0.2);
+    }
+}
+
+.#{$prefix}info-card {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+    min-height: 100%;
+
+    box-shadow: 0 0 20px 0 rgba(black, 0.2);
+
+    .#{$prefix}info-card-header {
+        display: flex;
+        justify-content: space-between;
+
+        .#{$prefix}info-card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .#{$prefix}info-card-direction {
+            margin-left: auto;
+            display: inline-flex;
+            justify-content: flex-end;
+
+            i {
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 22px;
+                margin-right: 0px;
+            }
+        }
+    }
+
+    .#{$prefix}info-card-body {
+        padding: 22px 0;
+
+        .#{$prefix}info-value-title {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .#{$prefix}info-value-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+    }
+}

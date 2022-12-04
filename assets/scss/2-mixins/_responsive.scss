@@ -1,0 +1,19 @@
+// Responsive Media Queries
+
+@mixin media-up($breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@mixin media-down($breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+        @content;
+    }
+}
+
+@mixin media-up-down($breakpointUp, $breakpointDown) {
+    @media (min-width: (map-get($breakpoints, $breakpointUp))) and (max-width: map-get($breakpoints, $breakpointDown) - 1px) {
+        @content;
+    }
+}

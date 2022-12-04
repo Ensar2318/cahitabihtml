@@ -1,0 +1,94 @@
+.#{$prefix}card-file-manager {
+    .#{$prefix}file-list {
+        .#{$prefix}file-list-item {
+            display: flex;
+            align-items: center;
+
+            + .#{$prefix}file-list-item {
+                margin-top: 25px;
+            }
+
+            .#{$prefix}file-icon {
+                width: 50px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-right: 15px;
+
+                i {
+                    font-size: 50px;
+                }
+            }
+
+            .#{$prefix}file-info {
+                margin-right: 50px;
+
+                .#{$prefix}file-name {
+                    font-size: 20px;
+                    @include media-down("sm") {
+                        font-size: 15px;
+                    }
+                }
+
+                .#{$prefix}file-date {
+                    opacity: 0.5;
+                    @include media-down("sm") {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .#{$prefix}file-edit-time {
+                font-size: 16px;
+                opacity: 0.5;
+                @include media-down("sm") {
+                    display: none;
+                }
+            }
+
+            .#{$prefix}file-size {
+                background-color: rgba(206, 206, 206, 0.5);
+                display: inline-block;
+                text-align: center;
+                padding: 4px 18px;
+                color: rgba(57, 57, 57, 0.5);
+                border-radius: 5px;
+                margin-left: auto;
+                @include media-down("sm") {
+                    font-size: 13px;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+
+    .#{$prefix}file-manager {
+        margin-top: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 4/1.5;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23333' stroke-width='2' stroke-dasharray='12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        border-radius: 20px;
+
+        display: block;
+
+        i {
+            font-size: 56px;
+            display: none;
+        }
+    }
+}
+
+.uppy-Dashboard-inner {
+    background: transparent !important;
+    border: none !important;
+}
+
+[data-uppy-drag-drop-supported="true"] .uppy-Dashboard-AddFiles {
+    border: none !important;
+}

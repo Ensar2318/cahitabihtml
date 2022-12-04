@@ -1,0 +1,100 @@
+/*
+    Spacing Helpers
+*/
+
+@each $spacing in $spacings {
+    // Margins
+
+    .#{$prefix}mb-#{$spacing} {
+        margin-bottom: $spacing * 1px !important;
+    }
+
+    .#{$prefix}mt-#{$spacing} {
+        margin-top: $spacing * 1px !important;
+    }
+
+    .#{$prefix}ms-#{$spacing} {
+        margin-left: $spacing * 1px !important;
+    }
+
+    .#{$prefix}me-#{$spacing} {
+        margin-right: $spacing * 1px !important;
+    }
+
+    .#{$prefix}m-#{$spacing} {
+        margin: $spacing * 1px !important;
+    }
+
+    // Paddings
+
+    .#{$prefix}pb-#{$spacing} {
+        padding-bottom: $spacing * 1px !important;
+    }
+
+    .#{$prefix}pt-#{$spacing} {
+        padding-top: $spacing * 1px !important;
+    }
+
+    .#{$prefix}ps-#{$spacing} {
+        padding-left: $spacing * 1px !important;
+    }
+
+    .#{$prefix}pe-#{$spacing} {
+        padding-right: $spacing * 1px !important;
+    }
+
+    .#{$prefix}p-#{$spacing} {
+        padding: $spacing * 1px !important;
+    }
+
+    // Responsive Margins and Paddings
+
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        @if ($breakpointValue != 1) {
+            @include media-up($breakpoint) {
+                // Margins
+
+                .#{$prefix}mb-#{$breakpoint}-#{$spacing} {
+                    margin-bottom: $spacing * 1px !important;
+                }
+
+                .#{$prefix}mt-#{$breakpoint}-#{$spacing} {
+                    margin-top: $spacing * 1px !important;
+                }
+
+                .#{$prefix}ms-#{$breakpoint}-#{$spacing} {
+                    margin-left: $spacing * 1px !important;
+                }
+
+                .#{$prefix}me-#{$breakpoint}-#{$spacing} {
+                    margin-right: $spacing * 1px !important;
+                }
+                .#{$prefix}m-#{$breakpoint}-#{$spacing} {
+                    margin: $spacing * 1px !important;
+                }
+
+                // Paddings
+
+                .#{$prefix}pb-#{$breakpoint}-#{$spacing} {
+                    padding-bottom: $spacing * 1px !important;
+                }
+
+                .#{$prefix}pt-#{$breakpoint}-#{$spacing} {
+                    padding-top: $spacing * 1px !important;
+                }
+
+                .#{$prefix}ps-#{$breakpoint}-#{$spacing} {
+                    padding-left: $spacing * 1px !important;
+                }
+
+                .#{$prefix}pe-#{$breakpoint}-#{$spacing} {
+                    padding-right: $spacing * 1px !important;
+                }
+
+                .#{$prefix}p-#{$breakpoint}-#{$spacing} {
+                    padding: $spacing * 1px !important;
+                }
+            }
+        }
+    }
+}

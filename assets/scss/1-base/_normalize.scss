@@ -1,0 +1,24 @@
+* {
+    font-family: $baseFontFamily;
+}
+
+html,
+body {
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight;
+    font-weight: $baseFontWeight;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 4px solid transparent;
+        background: #145ce4;
+    }
+}

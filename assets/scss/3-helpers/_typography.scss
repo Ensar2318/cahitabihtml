@@ -1,0 +1,36 @@
+/*
+    Typography Helpers
+*/
+
+// Font Weights
+
+@each $fontWeightKey, $fontWeightValue in $fontWeights {
+    .#{$prefix}fw-#{$fontWeightKey} {
+        font-weight: map-get($fontWeights, $fontWeightKey) !important;
+    }
+}
+
+// font sizes
+@each $fontSizeKey, $fontSizeValue in $fontSizes {
+    .#{$prefix}fs-#{$fontSizeKey} {
+        font-size: map-get($fontSizes, $fontSizeKey) * 1px !important;
+    }
+}
+
+// Text Aligns
+
+@each $textAlignKey, $textAlignValue in $textAligns {
+    .#{$prefix}text-#{$textAlignKey} {
+        text-align: map-get($textAligns, $textAlignKey) !important;
+    }
+
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        @if ($breakpointValue != 1) {
+            @include media-down($breakpoint) {
+                .#{$prefix}text-#{$breakpoint}-#{$textAlignKey} {
+                    text-align: map-get($textAligns, $textAlignKey) !important;
+                }
+            }
+        }
+    }
+}

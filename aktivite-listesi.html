@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.css">
+    <link rel="stylesheet" href="assets/vendors/apex-charts/apexcharts.css">
+    <link rel="stylesheet" href="assets/vendors/air-datepicker-3/air-datepicker.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- :: PHOSPOR ICONS :: -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+
+<body>
+
+    <!-- :: BEGIN MASTER CONTAINER :: -->
+    <div class="ui-master-container">
+        <!-- :: BEGIN MASTER SIDEBAR :: -->
+        <div class="ui-sidebar-overlay"></div>
+        <div class="ui-master-sidebar">
+            <!-- :: BEGIN MASTER SIDEBAR HEADER :: -->
+            <div class="ui-sidebar-header">
+                <a href="#" class="ui-brand">
+                    <a class="ui-mobile-sidebar-toggle" href=""> <i class="ph-x"></i></a>
+                    <img src="assets/img/logo/logo.png" alt="">
+                </a>
+            </div>
+            <!-- :: END MASTER SIDEBAR HEADER :: -->
+
+            <!-- :: BEGIN MASTER SIDEBAR BODY :: -->
+            <div class="ui-sidebar-body">
+
+                <nav class="ui-sidebar-nav">
+                    <div class="ui-sidebar-nav-top">
+                        <div class="ui-sidebar-nav-item active">
+                            <a href="index.html">
+                                <i class="ph-house"></i>
+                                <span> Anasayfa</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="musteri-detay.html">
+                                <i class="ph-users"></i>
+                                <span> Müşteriler</span>
+                            </a>
+                            <span class="ui-sidebar-submenu-toggle">
+                                <i class="ph-caret-down"></i>
+                            </span>
+                            <div class="ui-sidebar-submenu">
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                                <div class="ui-sidebar-submenu-item">
+                                    <a href="#">
+                                        <i class="ph-caret-right"></i>
+                                        <span> Müşteri Listesi</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-tag"></i>
+                                <span> Fırsatlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-chart-line-up"></i>
+                                <span>Aktiviteler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-clipboard-text"></i>
+                                <span> Görevler</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="siparis-olustur.html">
+                                <i class="ph-shopping-cart"></i>
+                                <span>Siparişler</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ui-sidebar-nav-bottom">
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-gear"></i>
+                                <span>Ayarlar</span>
+                            </a>
+                        </div>
+                        <div class="ui-sidebar-nav-item">
+                            <a href="#">
+                                <i class="ph-sign-out"></i>
+                                <span> Çıkış Yap</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <!-- :: END MASTER SIDEBAR BODY :: -->
+
+        </div>
+        <!-- :: END MASTER SIDEBAR :: -->
+        <div class="ui-master-main-wrapper">
+            <!-- :: BEGIN MASTER TOPBAR :: -->
+            <div class="ui-master-topbar">
+
+                <div class="ui-topbar-content">
+                    <!-- :: BEGIN TOPBAR MAIN :: -->
+
+                    <div class="ui-topbar-main">
+                        <div class="ui-mobile-toggle-side">
+                            <a href="" class="ui-mobile-sidebar-toggle">
+                                <i class="ph-list"></i>
+                            </a>
+                            <a href="#" class="ui-mobile-brand d-sm-block d-none">
+                                <img src="assets/img/logo/logo.png" alt="">
+                            </a>
+                        </div>
+                        <h1 class="ui-topbar-title">Sipariş Oluştur</h1>
+
+                        <div class="ui-topbar-search" ui-data-search-selected="searchbar">
+                            <div class="ui-search-input">
+                                <i class="ph-magnifying-glass"></i>
+                                <input type="text" name="query" id="ui-main-search-input"
+                                    placeholder="Aramak için bir şeyler yaz" autocomplete="off">
+                            </div>
+
+                            <div class="ui-search-results"></div>
+                        </div>
+
+                        <div class="ui-setting-toolbar">
+                            <div class="ui-toolbar-buttons">
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn"><i
+                                            class="ph-shopping-cart"></i></button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-shopping-button-in-shopping-result-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-pb-5 ui-fs-16">Sipariş
+                                                Özeti</span>
+                                            <div class="d-flex justify-content-between ui-pb-10 ui-pe-10">
+                                                <span class="ui-fs-16">Ürün</span>
+                                                <span class="ui-fs-16">Toplam</span>
+                                            </div>
+
+                                            <div class="ui-shopping-dropdown-container ui-pe-10">
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between ui-pb-10">
+                                                    <div class="d-flex align-items-start gap-2">
+                                                        <img class="ui-image-responsive-small"
+                                                            src="https://via.placeholder.com/300/09f/fff.png">
+                                                        <div>
+                                                            <span class="d-block ui-fs-14">Ahşap Çerçeve</span>
+                                                            <span class="d-block ui-opacity-50 ui-fs-14">Boyut:
+                                                                30x60</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ui-fs-14">265,99₺</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="ui-mt-10 ui-mb-10">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <span class="d-block ui-fs-14">İndirim Tutarı</span>
+                                                    <span class="d-block ui-fs-14">KDV</span>
+                                                    <span class="d-block ui-fs-14">Toplam</span>
+                                                </div>
+                                                <div>
+                                                    <span class="d-block  ui-fs-14">-112,35₺</span>
+                                                    <span class="d-block  ui-fs-14">+100₺</span>
+                                                    <span class="d-block  ui-fs-14">303,35₺</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-dropdown-container">
+                                    <button class="ui-dropdown-toggle ui-icon-btn">
+                                        <span class="ui-notify"></span>
+                                        <i class="ph-bell"></i>
+                                    </button>
+                                    <div class="ui-dropdown-content">
+                                        <div class="ui-notification-dropdown-container">
+                                            <span class="d-block ui-fw-b ui-opacity-50 ui-fs-16">Bildirimler</span>
+                                            <div class="ui-notification-body">
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                                <div class="ui-notification-item">
+                                                    <div class="ui-notification-title">
+                                                        <span>Check Attachements</span>
+                                                    </div>
+                                                    <div class="ui-notification-desc">
+                                                        İstanBlue Website
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button ui-data-search-target="searchbar" class="ui-icon-btn d-sm-none d-block"><i
+                                        class="ph-magnifying-glass"></i></button>
+                                <button class="openQuest ui-icon-btn d-xxl-none d-flex"><i
+                                        class="ph-newspaper"></i></button>
+
+                            </div>
+                            <div class="ui-toolbar-user">
+                                <img class="ui-user-profile" src="https://via.placeholder.com/60">
+                                <div class="ui-user-detail">
+                                    <div class="ui-user-name">Billur B.</div>
+                                    <div class="ui-user-title">BBTech Company</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- :: END TOPBAR MAIN :: -->
+
+                    <!-- :: BEGIN TOPBAR ACTIONS :: -->
+                    <div class="ui-topbar-actions">
+
+                    </div>
+                    <!-- :: END TOPBAR ACTIONS :: -->
+                </div>
+            </div>
+
+            <!-- :: END MASTER TOPBAR :: -->
+
+            <!-- :: BEGIN MASTER CONTENT :: -->
+            <div class="ui-master-content scrollable">
+                <div class="ui-p-25 ui-bg-light ui-rounded-20">
+                    <a href="#" class="ui-btn-add">
+                        <i class="ph-plus"></i>
+                    </a>
+                    <div class="ui-data-table-header">
+                        <div class="d-flex flex-grow-1">
+                            <div class="ui-button-group">
+                                <button value=" " class="ui-filter-active ui-responsive-button"
+                                    data-table-tab-name="opportunity_status"><i class="ph-check-circle"></i><span>
+                                        Tümünü Görüntüle</span></button>
+                                <button class="ui-responsive-button" value="açık"
+                                    data-table-tab-name="opportunity_status"> <i
+                                        class="ph-check-circle"></i><span>Açık</span></button>
+                                <button class="ui-responsive-button" value="kapalı"
+                                    data-table-tab-name="opportunity_status"><i
+                                        class="ph-x-circle"></i><span>Kapalı</span></button>
+                            </div>
+                            <div class="ms-auto ui-pb-10">
+                                <a href="#" class="ui-btn ui-btn-responsive theme-white ui-btn-sm"
+                                    ui-data-slide-target="data-table-outer">
+                                    <span class="">Filtrele</span>
+                                    <i class="ph-funnel ui-text-orange"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div ui-data-slide-selected="data-table-outer">
+                        <div class="ui-data-table-search my-3">
+                            <i class="ph-magnifying-glass"></i>
+                            <input id="search-datatable" type="text" placeholder="Aramak için bir şeyler yaz"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="ui-data-table-scrollable-area">
+                        <table class="ui-responsive-data-table" table-filter-input="#search-datatable" data-table-init
+                            table-filter-tab='[{"column":"5","target":"opportunity_status"}]'>
+                            <thead>
+                                <tr>
+                                    <th class="ui-w-200px">Başlık</th>
+                                    <th>Müşteri</th>
+                                    <th>Fırsat Tipi</th>
+                                    <th>Oluşturulma Tarihi</th>
+                                    <th>Oluşturan</th>
+                                    <th class="ui-w-200px">Fırsat Durumu</th>
+                                    <th>Not</th>
+                                    <th>Döküman</th>
+                                    <th>Not Tipi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-red-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Kapalı</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-red-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Kapalı</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-red-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Kapalı</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-red-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Kapalı</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                                <tr>
+                                    <td>Başlık 1</td>
+                                    <td>Müşteri 1</td>
+                                    <td>Fırsat Tipi1</td>
+                                    <td>gg.aa.yyyy</td>
+                                    <td>Oluşturan1</td>
+                                    <td><span
+                                            class="ui-badge ui-center-js theme-green-light ui-min-w-120px ui-max-w-120px d-block ui-me-10 ui-ms-10 ">Açık</span>
+                                    </td>
+                                    <td>Not1</td>
+                                    <td>Döküman1</td>
+                                    <td>Not Tipi1</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- :: END MASTER CONTENT :: -->
+        </div>
+
+    </div>
+    <!-- :: END MASTER CONTAINER :: -->
+
+
+    <!-- :: BEGIN SCRIPTS :: -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/vendors/anime/lib/anime.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/datatable.js"></script>
+    <script src="assets/js/datatableGlobal.js"></script>
+    <script src="assets/js/filterList.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="assets/vendors/apex-charts/apexcharts.min.js"></script>
+    <script src="assets/vendors/air-datepicker-3/air-datepicker.js"></script>
+    <script src="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- :: END SCRIPTS :: -->
+</body>
+
+</html>

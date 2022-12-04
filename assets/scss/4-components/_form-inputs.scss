@@ -1,0 +1,352 @@
+.#{$prefix}data-table-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 4px 10px;
+    gap: 6px;
+    input {
+        width: 100%;
+        min-height: 40px;
+        font-size: 18px;
+    }
+    i {
+        font-size: 24px;
+    }
+}
+
+.#{$prefix}form-control {
+
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: color('white');
+    border: 1px solid color('gray-light');
+    font-size: 14px;
+    padding: 6px 16px;
+    transition: .4s ease;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+        box-shadow: 0 0 20px 0 rgba(black, .1);
+        border-color:rgba(black, .15)
+    }
+
+    &.#{$prefix}status-error {
+        border-color: color('red');
+        color: color('red');
+    }
+
+    &.#{$prefix}status-success {
+        border-color: color('green');
+        color: color('green');
+    }
+
+    &.#{$prefix}status-info {
+        border-color: color('blue');
+        color: color('blue');
+    }
+
+    &:disabled {
+        opacity: .3;
+    }
+}
+
+.#{$prefix}form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.#{$prefix}form-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    
+    --circle-color: #{color('white')};
+
+    --disabled-bg-color: #{color('gray')};
+    --disabled-opacity: .3;
+
+    &.theme-orange {
+        --bg-color: #{color('orange')};
+        --bg-color-light: #{color('orange-light')};
+    }
+
+    &.theme-red {
+        --bg-color: #{color('red')};
+        --bg-color-light: #{color('red-light')};
+    }
+
+    &.theme-green {
+        --bg-color: #{color('green')};
+        --bg-color-light: #{color('green-light')};
+    }
+
+    &.theme-info {
+        --bg-color: #{color('slate-blue')};
+        --bg-color-light: #{color('slate-blue-light')};
+    }
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .slider {
+            background-color: var(--bg-color);
+        }
+
+        &:checked + .slider:before {
+            -webkit-transform: translateX(21px);
+            -ms-transform: translateX(21px);
+            transform: translateX(21px);
+        }
+
+        &:disabled + .slider {
+            opacity: var(--disabled-opacity);
+            background-color: var(--disabled-bg-color);
+            cursor: not-allowed;
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--bg-color-light);
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--circle-color);
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+    }
+}
+
+.#{$prefix}form-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+  
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: #eee;
+        border-radius: 3px;
+        transition: .4s ease;
+
+        &:hover {
+            background-color: #{color('orange-light')};
+        }
+
+        &::after {
+            content: "\ef28";
+            position: absolute;
+            color: white;
+            font: normal normal normal 1em/1 "Phosphor";
+            font-size: 23px;
+            flex-shrink: 0;
+            speak: none;
+            text-transform: none;
+            text-decoration: inherit;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: 0;
+            transition: .4s ease;
+        }
+    }
+
+    input ~ .checkmark {
+        background-color: #{color('white')};
+    }
+    input:checked ~ .checkmark {
+        background-color: #{color('orange')};
+    }
+    input:checked ~ .checkmark:after {
+        opacity: 1;
+    }
+}
+
+.#{$prefix}form-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    --inside-bg: #{color('gray')};
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+  
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: #{color('gray')};
+        border-radius: 3px;
+        transition: .4s ease;
+
+        &:hover {
+            background-color: #{color('orange-light')};
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            background-color: rgba(#808080, .3);
+            display: block;
+            z-index:100;
+            transition: .4s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            transition: .4s ease;
+        }
+    }
+
+    input ~ .checkmark {
+        background-color: #{color('white')};
+    }
+    input:checked ~ .checkmark {
+        background-color: #{color('orange')};
+    }
+    input:checked ~ .checkmark:before {
+        background-color: white;
+    }
+    input:checked ~ .checkmark:after {
+        opacity: 1;
+    }
+}
+
+.#{$prefix}form-select2 {
+    width: 100%;
+}
+
+/* Select2 */
+
+$select2-height: 40px;
+
+.select2-container {
+    height: $select2-height;
+}
+
+.select2-container .select2-selection--single {
+    height: $select2-height;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+    height: $select2-height;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: $select2-height;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: $select2-height;
+    width: 30px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #fff transparent !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #fff transparent transparent transparent !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    font-size: 16px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #{color('orange')};
+}
+
+.select2-selection__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+        content: "\f31a";
+        font: normal normal normal 1em/1 "Phosphor";
+        font-size: 20px;
+        flex-shrink: 0;
+        speak: none;
+        text-transform: none;
+        text-decoration: inherit;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: .4s ease;
+    }
+}
+
+.select2-container--open {
+    .select2-selection__arrow {
+        
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
