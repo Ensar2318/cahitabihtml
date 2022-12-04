@@ -27,7 +27,7 @@ mainSearchInput.addEventListener('keyup', (e) => {
     }
 
     $.ajax({
-        url: '/data/search-results.json',
+        url: 'https://ensar2318.github.io/cahitabihtml/data/search-results.json',
         type: 'GET',
         success: function (data) {
             let searchResultsListHTML = '';
