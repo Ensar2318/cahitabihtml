@@ -6296,6 +6296,15 @@ body ::-webkit-scrollbar-thumb {
   transform: translate3d(0, 0, 0);
 }
 
+.openQuestButton {
+  display: none;
+}
+@media (max-width: 1599px) {
+  .openQuestButton {
+    display: block;
+  }
+}
+
 .ui-quest-sidebar {
   background-color: var(--ui-light);
   max-width: 400px;
@@ -6308,7 +6317,7 @@ body ::-webkit-scrollbar-thumb {
   right: 25px;
   font-size: 32px;
 }
-@media (max-width: 1399px) {
+@media (max-width: 1599px) {
   .ui-quest-sidebar {
     max-width: 100%;
     overflow: hidden;
