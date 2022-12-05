@@ -5414,14 +5414,36 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .ui-credit-v1 {
+  transition: 0.6s;
   border-radius: 20px;
   padding: 25px 15px 15px 15px;
+}
+.ui-credit-v1.flipped {
+  transform: rotateY(180deg);
+}
+.ui-credit-v1.flipped .front-line {
+  opacity: 0;
+  display: none;
+}
+.ui-credit-v1.flipped .back-line {
+  opacity: 1;
+  display: block;
 }
 .ui-credit-v1.blue {
   background: linear-gradient(104.54deg, #bec6ff 2.06%, #a9bcff 28.58%, #71a2ff 100%);
 }
 .ui-credit-v1.orange {
   background: linear-gradient(104.54deg, #ffc2be 2.06%, #edaa84 28.58%, #ff7171 100%);
+}
+.ui-credit-v1 .front-line {
+  opacity: 1;
+  transition: 0.4s;
+  display: block;
+}
+.ui-credit-v1 .back-line {
+  opacity: 0;
+  display: none;
+  transition: 0.4s;
 }
 .ui-credit-v1 .credit-line {
   height: 38px;
